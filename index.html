@@ -17,39 +17,51 @@
     <div class="boxes">Baris kedua koma lima</div>
     <div class="boxes">Baris ketiga</div>
 
+    <form>
+        <input type="text" id="inputText">
+        <input type="submit">
+    </form>
+
     <script>
         //memastikan file sudah di load dengan sempurna
         $(document).ready(function(){
 
             // ======== Selection ========
-            $('h1').css('color','red');
-            $('#box1').css('color','blue');
-            $('.boxes').css('color','violet');
-            $('.boxes:first').css('color','yellow');
-            $('.boxes:last').css('color','aqua');
-            $('.boxes:eq(2)').css('color','blue');
+            // $('h1').css('color','red');
+            // $('#box1').css('color','blue');
+            // $('.boxes').css('color','violet');
+            // $('.boxes:first').css('color','yellow');
+            // $('.boxes:last').css('color','aqua');
+            // $('.boxes:eq(2)').css('color','blue');
 
             // ======== Event ========
-            $('h1').click(function(){
-                $('h1').css('color','blue');
-            });
-            $('h1').mouseenter(function(){
-                $('h1').css('color','green');
-            });
-            $('h1').mouseleave(function(){
-                $('h1').css('color','violet');
-            });
-            $('.boxes').mouseleave(function(){
-                $(this).css('color','red');
-            });
+            // $('h1').click(function(){
+            //     $('h1').css('color','blue');
+            // });
+            // $('h1').mouseenter(function(){
+            //     $('h1').css('color','green');
+            // });
+            // $('h1').mouseleave(function(){
+            //     $('h1').css('color','violet');
+            // });
+            // $('.boxes').mouseleave(function(){
+            //     $(this).css('color','red');
+            // });
 
+
+            // ======== Get And Set Value ========
+            $('form').submit(function(){
+               var tulisan = ($('#inputText').val());
+               $('h1').text(tulisan);
+               $('h1').text();
+
+               
+               //mencegah sifat
+               // agar button tidak mereload
+               event.preventDefault();
+            });
             
-        })
-
-    
-
+        });
     </script>
-
-
 </body>
 </html>
