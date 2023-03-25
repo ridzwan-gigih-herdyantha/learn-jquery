@@ -36,6 +36,15 @@
         <input type="text" id="inputText">
         <input type="submit">
     </form>
+    <br>
+    <button id="btn1" >Show</button>
+    <br>
+    <br>
+    <button id="btn2" >Hide</button>
+    <br>
+    <br>
+    <button id="btn3" >Toggle</button>
+
 
     <script>
         //memastikan file sudah di load dengan sempurna
@@ -76,14 +85,13 @@
 
             // ======== Get And Set Value ========
             $('form').submit(function(){
-               var tulisan = ($('#inputText').val());
-               $('h1').text(tulisan);
-               $('h1').text();
+            var tulisan = ($('#inputText').val());
+            $('h1').text(tulisan);
+            $('h1').text();
 
-               
-               //mencegah sifat
-               // agar button tidak mereload
-               event.preventDefault();
+           //mencegah sifat
+           // agar button tidak mereload
+            event.preventDefault();
             });
 
             // ======== Menambahkan dan Menghapus Elemen ========
@@ -115,10 +123,58 @@
             // var nilai = $('#boxes_wrap').outerWidth(true);
 
             // ==== Mengset Dimensi 
-            var nilai = $('#boxes_wrap').height(120).width(150);
-
+            // var nilai = $('#boxes_wrap').height(120).width(150);
             // $('#box1').text(nilai);
 
+            // hide - show - toggle
+            // $('#btn1').click(function(){
+            //     $('#box1').show();
+            //     event.preventDefault();
+            // })
+
+            // $('#btn2').click(function() {
+            //     $('#box1').hide();
+            //     event.preventDefault();
+            // })
+
+            // $('#btn3').click(function() {
+            //     $('#box1').toggle('slow');
+            //     event.preventDefault();
+            // })
+
+            // fadeIn - fadeOut - fadeTo(time , opacity) - fadeToggle
+            // $('#btn1').click(function(){
+            //     $('#box1').fadeIn(2000);
+            //     event.preventDefault();
+            // })
+
+            // $('#btn2').click(function() {
+            //     $('#box1').fadeOut(2000);
+            //     event.preventDefault();
+            // })
+
+            // $('#btn3').click(function() {
+            //     $('#box1').fadeTo(2000, 0.5);
+            //     event.preventDefault();
+            // })
+
+            // $('#btn3').click(function() {
+            //     $('#box1').fadeToggle();
+            //     event.preventDefault();
+            // })
+
+            // slideUp slideDown slideToggle
+            $("#btn1").click(function(){
+                $("h1").slideDown();
+            });
+        
+            $("#btn2").click(function(){
+                $("h1").slideUp();
+            });
+        
+            $("#btn3").click(function(){
+                $("h1").slideToggle();
+            });
 
         });
     </script>
