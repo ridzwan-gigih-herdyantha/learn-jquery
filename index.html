@@ -29,7 +29,7 @@
         <li>html</li>
         <li id="css">css</li>
         <li>jquery</li>
-        <li>database</li>
+        <li id="db">database</li>
     </ul>
 
     <div id="box1"> Box 1 </div>
@@ -60,12 +60,25 @@
         //memastikan file sudah di load dengan sempurna
         $(document).ready(function(){
 
-            $('li').first().css('color' , 'red');
-            $('li').eq(1).css('color' , 'blue');
-            $('li').last().css('color' , 'blue');
+            // ======= Traversing ========
+            // $('li').first().css('color' , 'red');
+            // $('li').eq(1).css('color' , 'blue');
+            // $('li').last().css('color' , 'blue');
 
-            $('li').filter('#css').css('fontSize' , '25px');
-            $('li').not('#css').css('background' , 'gray');
+            // $('li').filter('#css').css('fontSize' , '25px');
+            // $('li').not('#css').css('background' , 'gray');
+
+            // ======= siblings next nextAll nextUntil('param') ~ prev 
+            $('#css').siblings().css('fontSize' , '20px');
+            // $('#css').next().css('color' , 'red');
+            // $('#css').nextAll().css('color' , 'red');
+            // $('#css').nextUntil('#db').css('color' , 'red');
+            // $('#db').prev().css('color' , 'red');
+            // $('#db').prevAll().css('color' , 'red');
+            $('#db').prevUntil('#css').css('color' , 'red');
+
+
+
 
             // ======== Selection ========
             // ==== css jquery ====
