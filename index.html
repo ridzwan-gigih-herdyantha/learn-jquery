@@ -31,7 +31,10 @@
         <div class="boxes">Baris kedua koma lima</div>
         <div class="boxes">Baris ketiga</div>
     </div>
-
+    <br>
+    <button id="btn4" >Stop</button>
+    <br>
+    <br>
     <form>
         <input type="text" id="inputText">
         <input type="submit">
@@ -44,7 +47,6 @@
     <br>
     <br>
     <button id="btn3" >Toggle</button>
-
 
     <script>
         //memastikan file sudah di load dengan sempurna
@@ -165,15 +167,25 @@
 
             // slideUp slideDown slideToggle
             $("#btn1").click(function(){
-                $("h1").slideDown();
+                $("#boxes_wrap").slideDown(2000);
             });
         
             $("#btn2").click(function(){
-                $("h1").slideUp();
+                $("#boxes_wrap").slideUp(2000, function(){
+                    alert('selesai');
+                }).fadeIn(2000).fadeTo(2000, 0.5);
             });
         
             $("#btn3").click(function(){
-                $("h1").slideToggle();
+                $("#boxes_wrap").slideToggle(2000);
+            });
+
+            //stop animasi - callback - chaining
+            // stop animasi = menghentikan animasi
+            // callback = dapat memberi function setelah function dijalankan
+            // chaining = merantai / menggabungkan beberapa metde
+            $("#btn4").click(function(){
+                $("#boxes_wrap").stop();
             });
 
         });
