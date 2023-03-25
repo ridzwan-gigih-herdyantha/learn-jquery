@@ -14,12 +14,11 @@
 
     <div class="boxes">Baris pertama</div>
     <div class="boxes">Baris kedua</div>
-    <div class="boxes">Baris kedua koma lima </div>
+    <div class="boxes">Baris kedua koma lima</div>
     <div class="boxes">Baris ketiga</div>
 
     <script>
         //memastikan file sudah di load dengan sempurna
-
         $(document).ready(function(){
 
             // ======== Selection ========
@@ -30,6 +29,21 @@
             $('.boxes:last').css('color','aqua');
             $('.boxes:eq(2)').css('color','blue');
 
+            // ======== Event ========
+            $('h1').click(function(){
+                $('h1').css('color','blue');
+            });
+            $('h1').mouseenter(function(){
+                $('h1').css('color','green');
+            });
+            $('h1').mouseleave(function(){
+                $('h1').css('color','violet');
+            });
+            $('.boxes').mouseleave(function(){
+                $(this).css('color','red');
+            });
+
+            
         })
 
     
