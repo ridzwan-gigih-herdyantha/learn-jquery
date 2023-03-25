@@ -24,6 +24,14 @@
 <body>
     <h1 class="change">Belajar JQuery!</h1>
 
+    <ul>
+        <li>belajar</li>
+        <li>html</li>
+        <li id="css">css</li>
+        <li>jquery</li>
+        <li>database</li>
+    </ul>
+
     <div id="box1"> Box 1 </div>
     <div id="boxes_wrap">
         <div class="boxes">Baris pertama</div>
@@ -52,28 +60,35 @@
         //memastikan file sudah di load dengan sempurna
         $(document).ready(function(){
 
+            $('li').first().css('color' , 'red');
+            $('li').eq(1).css('color' , 'blue');
+            $('li').last().css('color' , 'blue');
+
+            $('li').filter('#css').css('fontSize' , '25px');
+            $('li').not('#css').css('background' , 'gray');
+
             // ======== Selection ========
             // ==== css jquery ====
-            $('h1').css
-            ({
-                'color' : 'white',
-                'backgroundColor' : 'gray',
-                'padding' : '2px',
-            });            
+            // $('h1').css
+            // ({
+            //     'color' : 'white',
+            //     'backgroundColor' : 'gray',
+            //     'padding' : '2px',
+            // });            
 
-            $('#box1').css('color','blue');
+            // $('#box1').css('color','blue');
             // $('.boxes').css('color','violet');
             // $('.boxes:first').css('color','yellow');
             // $('.boxes:last').css('color','aqua');
             // $('.boxes:eq(2)').css('color','blue');
 
             // ======== Event ========
-            $('h1').click(function(){
+            // $('h1').click(function(){
                 // $('h1').removeClass('change');
                 // $('h1').addClass('change');
-                $('h1').toggleClass('change');
+                // $('h1').toggleClass('change');
                 // $('h1').css('color','blue');
-            });
+            // });z
             // $('h1').mouseenter(function(){
             //     $('h1').css('color','green');
             // });
@@ -86,15 +101,15 @@
 
 
             // ======== Get And Set Value ========
-            $('form').submit(function(){
-            var tulisan = ($('#inputText').val());
-            $('h1').text(tulisan);
-            $('h1').text();
+            // $('form').submit(function(){
+            // var tulisan = ($('#inputText').val());
+            // $('h1').text(tulisan);
+            // $('h1').text();
 
            //mencegah sifat
            // agar button tidak mereload
-            event.preventDefault();
-            });
+            // event.preventDefault();
+            // });
 
             // ======== Menambahkan dan Menghapus Elemen ========
 
@@ -166,27 +181,27 @@
             // })
 
             // slideUp slideDown slideToggle
-            $("#btn1").click(function(){
-                $("#boxes_wrap").slideDown(2000);
-            });
+            // $("#btn1").click(function(){
+            //     $("#boxes_wrap").slideDown(2000);
+            // });
         
-            $("#btn2").click(function(){
-                $("#boxes_wrap").slideUp(2000, function(){
-                    alert('selesai');
-                }).fadeIn(2000).fadeTo(2000, 0.5);
-            });
+            // $("#btn2").click(function(){
+            //     $("#boxes_wrap").slideUp(2000, function(){
+            //         alert('selesai');
+            //     }).fadeIn(2000).fadeTo(2000, 0.5);
+            // });
         
-            $("#btn3").click(function(){
-                $("#boxes_wrap").slideToggle(2000);
-            });
+            // $("#btn3").click(function(){
+            //     $("#boxes_wrap").slideToggle(2000);
+            // });
 
             //stop animasi - callback - chaining
             // stop animasi = menghentikan animasi
             // callback = dapat memberi function setelah function dijalankan
             // chaining = merantai / menggabungkan beberapa metde
-            $("#btn4").click(function(){
-                $("#boxes_wrap").stop();
-            });
+            // $("#btn4").click(function(){
+            //     $("#boxes_wrap").stop();
+            // });
 
         });
     </script>
