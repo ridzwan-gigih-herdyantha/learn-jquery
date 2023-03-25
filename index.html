@@ -7,7 +7,13 @@
     <script src="jquery.js"></script>
     <title>Jquery Basic</title>
     <style>
-        #boxes_wrap{ width:100px; height: 100px; background-color: gray; }
+        #boxes_wrap{ 
+            width:100px; 
+            height: 100px;
+            padding: 30px;
+            border: 5px solid black;
+            margin: 10px;
+        }
 
         .change{
             background-color:white !important;
@@ -88,17 +94,32 @@
             // prepend = di dalam div & paling awal 
             // after = diluar div & setelah div 
             // before = diluar div & sebelum div 
-            $('#boxes_wrap').prepend('<div>Halo</div>');
-            $('#boxes_wrap').append('<div>Halo</div>');
-            $('#boxes_wrap').before('<div>Halo</div>');
-            $('#boxes_wrap').after('<div>Halo</div>');
+            // $('#boxes_wrap').prepend('<div>Halo</div>');
+            // $('#boxes_wrap').append('<div>Halo</div>');
+            // $('#boxes_wrap').before('<div>Halo</div>');
+            // $('#boxes_wrap').after('<div>Halo</div>');
             
             // ==== Menghapus Element ====
             //empty remove
             // $('#boxes_wrap').empty();
-            $('#boxes_wrap').remove();
+            // $('#boxes_wrap').remove();
 
-            
+
+            // ======== Dimensi ========
+            // ==== Menampilkan Dimensi 
+            // width -> kontent
+            // innerWidth -> kontent + padding
+            // outerWidth -> kontent + padding + border
+            // outerWidth(true) -> kontent + padding + border + margin
+            // var nilai = $('#boxes_wrap').height();
+            // var nilai = $('#boxes_wrap').outerWidth(true);
+
+            // ==== Mengset Dimensi 
+            var nilai = $('#boxes_wrap').height(120).width(150);
+
+            // $('#box1').text(nilai);
+
+
         });
     </script>
 </body>
